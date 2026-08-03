@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# NeverAlone 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-## HELLO
-## Get started
+**NeverAlone** is a full-stack mobile app built for the University of Maryland community to fight social isolation among freshmen and commuter students. It helps students find nearby classmates to talk to, study with, or grab a meal with — in real time.
 
-1. Install dependencies
-## Hellogit status
-   ```bash
-   npm install
-   ```
+Originally built during the Technica Hackathon 2025–2026 as a frontend prototype, it has since been rebuilt into a full-stack application with real authentication, a live database, and location-based matching.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## The Problem
 
-In the output, you'll find options to open the app in a
+Freshmen and commuter students often don't have someone to sit with at lunch, study with between classes, or just talk to on campus — especially if their friends are on a different schedule or they're new to the university. NeverAlone makes it easy to see who else from your major or with similar interests is nearby and available right now.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Features
 
-## Get a fresh project
+- **Secure Authentication** — Email/password sign-up and login powered by Firebase Authentication
+- **Persistent Profiles** — Name, major, and interests saved to Cloud Firestore
+- **Real-Time Availability** — Students toggle whether they're currently free to meet up
+- **Location Check-In** — Students select their current spot on campus (Stamp Student Union, McKeldin Library, Yahentamitsi Dining Hall, The Bagel Place, and more)
+- **Interactive Campus Map** — Built with `react-native-maps`, showing only the spots where someone is currently available
+- **Smart Filtering** — Browse nearby students by major, interests, and location
+- **Secure Logout** — Full session management with Firebase Auth
 
-When you're ready, run:
+---
 
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React Native, Expo, Expo Router, TypeScript |
+| Backend / Database | Firebase Authentication, Cloud Firestore |
+| Maps | react-native-maps |
+| Language | TypeScript |
+
+---
+
+## Project Structure
+app/
+├── _layout.tsx # Root navigation stack (login → tabs)
+├── login.tsx # Login & registration screen
+└── (tabs)/
+├── _layout.tsx # Tab navigation (Profile / Explore)
+├── index.tsx # Profile screen (name, major, interests, availability, location)
+└── explore.tsx # Map + list of available nearby students
+firebaseConfig.ts # Firebase project configuration & initialization
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js installed
+- A Firebase project with **Authentication** (Email/Password) and **Firestore Database** enabled
+- Expo Go app installed on your phone (for testing on a real device — maps do not render on web)
+
+### Setup
+
+1. Clone the repository and install dependencies:
 ```bash
-npm run reset-project
+   npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Add your Firebase project credentials in `firebaseConfig.ts`:
+```typescript
+   const firebaseConfig = {
+     apiKey: "YOUR_API_KEY",
+     authDomain: "YOUR_PROJECT.firebaseapp.com",
+     projectId: "YOUR_PROJECT_ID",
+     storageBucket: "YOUR_PROJECT.firebasestorage.app",
+     messagingSenderId: "YOUR_SENDER_ID",
+     appId: "YOUR_APP_ID",
+   };
+```
 
-## Learn more
+3. Start the development server:
+```bash
+   npx expo start -c
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Scan the QR code with **Expo Go** on your phone (map features require a real device — they do not render in the web preview).
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Roadmap
 
-Join our community of developers creating universal apps.
+- [ ] Restrict registration to `@umd.edu` / `@terpmail.umd.edu` emails
+- [ ] Real-time GPS-based check-in instead of manual location selection
+- [ ] Expand the list of campus meeting spots
+- [ ] UI/visual design polish
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## Author
+
+Katherine Alvarenga — Computer Science, University of Maryland
