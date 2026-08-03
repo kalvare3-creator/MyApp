@@ -1,6 +1,6 @@
 # NeverAlone 
 
-**NeverAlone** is a full-stack mobile app built for the University of Maryland community to fight social isolation among freshmen and commuter students. It helps students find nearby classmates to talk to, study with, or grab a meal with — in real time.
+**NeverAlone** is a full-stack mobile app built for the University of Maryland community to fight social isolation among freshmen and commuter students. It helps students find nearby classmates to talk to, study with, or grab a meal with in real time.
 
 Originally built during the Technica Hackathon 2025–2026 as a frontend prototype, it has since been rebuilt into a full-stack application with real authentication, a live database, and location-based matching.
 
@@ -8,7 +8,7 @@ Originally built during the Technica Hackathon 2025–2026 as a frontend prototy
 
 ## The Problem
 
-Freshmen and commuter students often don't have someone to sit with at lunch, study with between classes, or just talk to on campus — especially if their friends are on a different schedule or they're new to the university. NeverAlone makes it easy to see who else from your major or with similar interests is nearby and available right now.
+Freshmen and commuter students often don't have someone to sit with at lunch, study with between classes, or just talk to on campus especially if their friends are on a different schedule or they're new to the university. NeverAlone makes it easy to see who else from your major or with similar interests is nearby and available right now.
 
 ---
 
