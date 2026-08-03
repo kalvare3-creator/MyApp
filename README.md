@@ -36,6 +36,8 @@ Freshmen and commuter students often don't have someone to sit with at lunch, st
 ---
 
 ## Project Structure
+```text
+
 app/
 ├── _layout.tsx # Root navigation stack (login → tabs)
 ├── login.tsx # Login & registration screen
@@ -44,6 +46,7 @@ app/
 ├── index.tsx # Profile screen (name, major, interests, availability, location)
 └── explore.tsx # Map + list of available nearby students
 firebaseConfig.ts # Firebase project configuration & initialization
+```
 
 ---
 
